@@ -9,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IImageProcess, ImageProcess>();
+builder.Services.AddScoped<IImageProcess, AdvanceImageProcessAdapter>();
+builder.Services.AddScoped<IAdvanceImageProcess, AdvanceImageProcess>();
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));

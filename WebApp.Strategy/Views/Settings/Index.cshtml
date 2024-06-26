@@ -6,8 +6,6 @@
 
 <form asp-controller="Settings" asp-action="ChangeDatabase" method="post">
     <select name="databaseType" asp-for="DatabaseType" asp-items="Html.GetEnumSelectList<EDatabaseType>()"></select>
-
-
-    <button type="submit">Güncelle</button>
+    <button class="btn btn-warning btn-sm" type="submit">Güncelle</button>
 </form>
 

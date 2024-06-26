@@ -31,21 +31,12 @@ namespace WebApp.Strategy.Controllers
             Settings settings = new();
             if(User.Claims.Where(x=>x.Type==Settings.claimDatabaseType).FirstOrDefault()!=null)
             {
-
                 settings.DatabaseType =(EDatabaseType) int.Parse( User.Claims.First(x => x.Type == Settings.claimDatabaseType).Value);
-
-
-
-
-
             }
             else
             {
                 settings.DatabaseType = settings.GetDefaultDatabaseType;
             }
-
-
-
             return View(settings);
         }
 
